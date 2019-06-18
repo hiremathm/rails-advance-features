@@ -1,0 +1,44 @@
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <!-- <img src="<%#= @product.image.url %>" width="250px" height="200px"> -->
+  <%= image_tag @product.image.url(:lerge)%>
+
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @product.category_name %>
+</p>
+
+<p>
+  <strong>Stock:</strong>
+  <%= @product.stock %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Cod eligible:</strong>
+  <%= @product.cod_eligible %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @product.release_date %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

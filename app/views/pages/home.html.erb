@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="col-md-6">
+		<%issue_comment_count = 0%>
+		<%push_event_count = 0 %>
+		<%pull_request_event_count = 0%>
+		<%issues_event_count = 0%>
+		<%@commits.each do |commit|%>
+			<%case commit["type"]%>
+			<% when "IssueCommentEvent" %>
+				<%issue_comment_count = issue_comment_count + 1%>
+			<% when "PushEvent"%>
+				<%push_event_count = push_event_count + 1%>
+			<% when "PullRequestEvent"%>
+				<%pull_request_event_count = pull_request_event_count + 1%>
+			<% when "IssuesEvent"%>
+				<%issues_event_count = issues_event_count + 1%>
+			<%end%>
+			<%#if commit["type"] == "IssueCommentEvent"%>
+				<%#issue_comment_count = issue_comment_count + 1%>
+			<%#elsif commit["type"] == "PushEvent"%>
+				<%#push_event_count = push_event_count + 1%>
+			<%#elsif commit["type"] == "PullRequestEvent"%>
+				<%#pull_request_event_count = pull_request_event_count + 1%>
+			<%#elsif commit["type"] == "IssuesEvent"%>
+				<%#issues_event_count = issues_event_count + 1%>
+			<%#end%>
+		<%end%>
+		<br><br>
+		<h3>Count of Issue Comment Event : <%= issue_comment_count%></h3>
+		<h3>Count of Push Event : <%= push_event_count%></h3>
+		<h3>Count of Pull Request Event : <%= pull_request_event_count%></h3>
+		<h3>Count of Issues event : <%= issues_event_count%></h3>
+		<br><br>
+		<h2>Count all Events : <%= issue_comment_count +  push_event_count + pull_request_event_count + issues_event_count%></h2>
+	</div>
+</div>

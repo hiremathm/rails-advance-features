@@ -1,0 +1,18 @@
+
+<br><br><br><br><br><br><br><br><br><br>
+<div class="container">
+	<center>
+		<h4>Please Enter the one time password.</h4>
+		<div class="col-md-3">
+			<%= form_tag verify_path , multipart: true do %>
+				<div class="form-group">		
+					<input type="text" name="otp" class="form-control">
+				</div>
+
+				<div class="form-group">
+					<input type="submit", class="btn btn-primary">
+				</div>
+			<%end%>
+		</div>
+	</center>
+</div>
