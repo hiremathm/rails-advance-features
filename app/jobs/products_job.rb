@@ -7,6 +7,7 @@ class ProductsJob < ApplicationJob
 	queue_as :default
 
 	def perform(user)
-		Mailer.send_file( user).deliver_now
+		logger.debug "lskdfjlsdjfldsfjlskdfjsldfjlsdfkl"
+		# Mailer.send_file( user).deliver_now
 	end
 end

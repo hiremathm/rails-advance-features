@@ -87,12 +87,12 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.save
         res = Product.create_at_ott(product_params)
-        if res.options[:return_code] == :ok
+        # if res.options[:return_code] == :ok
           format.html { redirect_to @product, notice: 'Product was successfully created.' }
           format.json { render :show, status: :created, location: @product }
-        else
-          format.html { redirect_to @product, notice: 'Product was not successfully created.' }
-        end
+        # else
+          # format.html { redirect_to @product, notice: 'Product was not successfully created.' }
+        # end
       else
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }

@@ -24,6 +24,10 @@ class PagesController < ApplicationController
     
   end
 
+  def products_page
+    
+  end
+
   def find_orders
     boolean_value = params["boolean_value"]
     @products = find_all_orders(boolean_value)

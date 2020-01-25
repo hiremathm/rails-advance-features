@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  	devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-
+    require 'sidekiq/web'  
+    mount Sidekiq::Web => '/sidekiq'
+  
+    devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   	# resources :products do
   	# 	collection { post :q, to: 'products#index' }
    #  end
@@ -24,5 +26,5 @@ Rails.application.routes.draw do
     get '/find_orders', :to => 'pages#find_orders', :as => :find_orders
     get '/all_products', :to => 'products#all_products', :as => :all_products
     get '/home_page', :to => 'pages#home_page', :as => 'home_page'
-
+    get '/products-list', :to => 'pages#products_page'    
 end
