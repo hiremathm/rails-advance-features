@@ -29,7 +29,7 @@ gem "typhoeus"
 gem 'pg'
 gem 'dalli'
 gem 'sinatra'
-gem 'rack', '2.0.7'
+gem 'rack', '2.1.1'
 gem 'react-rails'
 gem 'webpacker'
 
